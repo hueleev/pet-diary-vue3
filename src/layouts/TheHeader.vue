@@ -4,10 +4,11 @@
 			<v-navigation-drawer expand-on-hover rail style="border-color: black">
 				<v-list>
 					<v-list-item
-						:prepend-avatar="'assets/img/avatar.png'"
+						:prepend-avatar="imgUrl"
 						title="MOZZI"
 						subtitle="ymz@gmailcom"
-					></v-list-item>
+					>
+				</v-list-item>
 				</v-list>
 
 				<v-divider color="black"></v-divider>
@@ -38,4 +39,6 @@
 	</v-card>
 </template>
 
-<script setup></script>
+<script setup>
+import imgUrl from '../assets/img/avatar.png';
+</script>
