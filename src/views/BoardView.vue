@@ -2,7 +2,7 @@
 	<v-container fluid>
 		<v-row>
 			<v-col>
-				<v-card title="Card title" text="test2..." variant="outlined">
+				<v-card title="Card title" text="test3..." variant="outlined">
 					<v-card-actions>
 						<v-btn>Click me</v-btn>
 					</v-card-actions>
