@@ -1,7 +1,8 @@
 <template>
 	<v-app>
-		<TheHeader></TheHeader>
-		<v-main class="h-screen"><router-view /></v-main>
+		<TheHeader
+			><v-main class="h-screen"><router-view /></v-main
+		></TheHeader>
 	</v-app>
 </template>
 

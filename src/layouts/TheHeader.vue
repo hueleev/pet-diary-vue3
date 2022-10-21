@@ -1,5 +1,11 @@
 <template>
-	<v-navigation-drawer expand-on-hover rail style="border-color: black">
+	<v-navigation-drawer
+		permanent
+		expand-on-hover
+		rail
+		style="border-color: black"
+		:touchless="true"
+	>
 		<!-- expand-on-hover -->
 		<v-list>
 			<v-list-item
@@ -36,6 +42,7 @@
 					></v-list-item> -->
 		</v-list>
 	</v-navigation-drawer>
+	<slot></slot>
 </template>
 
 <script setup>
