@@ -1,5 +1,5 @@
 <template>
-	<div class="d-flex justify-center mt-3" style="gap: 1rem">
+	<div class="d-flex justify-center" style="gap: 1rem; margin: 18px">
 		<v-btn
 			prepend-icon="mdi-format-list-bulleted"
 			variant="outlined"
@@ -15,7 +15,7 @@
 			>write</v-btn
 		>
 	</div>
-	<v-divider class="mt-4" color="black" />
+	<v-divider color="black" />
 	<v-container fluid>
 		<BoardList v-if="type == 'list'"></BoardList>
 	</v-container>

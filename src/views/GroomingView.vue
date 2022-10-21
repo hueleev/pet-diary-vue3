@@ -1,5 +1,5 @@
 <template>
-	<v-container class="h-screen d-flex justify-center align-center">
+	<v-container class="h-screen d-flex align-center" style="position: fixed">
 		<DogComponent />
 	</v-container>
 </template>

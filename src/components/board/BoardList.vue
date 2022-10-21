@@ -1,5 +1,5 @@
 <template>
-	<v-row justify="center">
+	<v-row>
 		<BoardCard title="Card title" content="..."></BoardCard>
 		<BoardCard title="Card titletitletitle" content="..."></BoardCard>
 		<BoardCard

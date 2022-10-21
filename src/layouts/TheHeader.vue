@@ -1,18 +1,28 @@
 <template>
 	<v-navigation-drawer
+		v-model="drawer"
+		:rail="rail"
 		permanent
-		expand-on-hover
-		rail
 		style="border-color: black"
 		:touchless="true"
+		@click.stop="rail = false"
 	>
-		<!-- expand-on-hover -->
+		<!-- 
+		rail -->
 		<v-list>
 			<v-list-item
 				:prepend-avatar="imgUrl"
 				title="MOZZI"
 				subtitle="ymz@gmailcom"
+				nav
 			>
+				<template v-slot:append>
+					<v-btn
+						variant="text"
+						icon="mdi-chevron-left"
+						@click.stop="rail = !rail"
+					></v-btn>
+				</template>
 			</v-list-item>
 		</v-list>
 
@@ -46,5 +56,8 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import imgUrl from '../assets/img/avatar.png';
+const drawer = ref(true);
+const rail = ref(true);
 </script>
