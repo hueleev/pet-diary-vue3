@@ -8,7 +8,8 @@
     "dev": "vite",
     "preview": "vite preview --port 4173",
     "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "db": "json-server --watch db.json --p 5000"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",

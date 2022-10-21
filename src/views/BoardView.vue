@@ -1,22 +1,29 @@
 <template>
+	<div class="d-flex justify-center mt-3" style="gap: 1rem">
+		<v-btn
+			prepend-icon="mdi-format-list-bulleted"
+			variant="outlined"
+			:active="type == 'list'"
+			@click="type = 'list'"
+			>list</v-btn
+		>
+		<v-btn
+			prepend-icon="mdi-pencil"
+			variant="outlined"
+			:active="type == 'write'"
+			@click="type = 'write'"
+			>write</v-btn
+		>
+	</div>
+	<v-divider class="mt-4" color="black" />
 	<v-container fluid>
-		<v-row>
-			<v-col>
-				<v-card title="Card title" text="2022-10-21 - 1" variant="outlined">
-					<v-card-actions>
-						<v-btn>Click me</v-btn>
-					</v-card-actions>
-				</v-card>
-			</v-col>
-			<v-col>
-				<v-card title="Card title" text="..." variant="outlined">
-					<v-card-actions>
-						<v-btn>Click me</v-btn>
-					</v-card-actions>
-				</v-card>
-			</v-col>
-		</v-row>
+		<BoardList v-if="type == 'list'"></BoardList>
 	</v-container>
 </template>
 
-<script setup></script>
+<script setup>
+import BoardList from '@/components/board/BoardList.vue';
+import { ref } from 'vue';
+
+const type = ref('list');
+</script>
