@@ -2,7 +2,7 @@
 	<v-container fluid>
 		<v-row>
 			<v-col>
-				<v-card title="Card title" text="2022-10-20 15:05" variant="outlined">
+				<v-card title="Card title" text="2022-10-21 - 1" variant="outlined">
 					<v-card-actions>
 						<v-btn>Click me</v-btn>
 					</v-card-actions>
