@@ -1,5 +1,5 @@
 <template>
-	<div class="d-flex justify-center" style="gap: 1rem; margin: 18px">
+	<div class="d-flex justify-center" style="gap: 1rem; margin: 14px">
 		<v-btn
 			prepend-icon="mdi-format-list-bulleted"
 			variant="outlined"

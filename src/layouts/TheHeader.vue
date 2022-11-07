@@ -10,20 +10,21 @@
 		<!-- 
 		rail -->
 		<v-list>
-			<v-list-item
-				:prepend-avatar="imgUrl"
-				title="MOZZI"
-				subtitle="ymz@gmailcom"
-				nav
-			>
-				<template v-slot:append>
-					<v-btn
-						variant="text"
-						icon="mdi-chevron-left"
-						@click.stop="rail = !rail"
-					></v-btn>
-				</template>
+			<v-list-item nav>
+				<v-img :src="imgUrl" @click.stop="rail = !rail"></v-img>
 			</v-list-item>
+			<template v-if="!rail">
+				<v-list-item title="MOZZI" subtitle="ymz@gmailcom">
+					<template v-slot:append>
+						<v-btn
+							variant="text"
+							icon="mdi-chevron-left"
+							@click.stop="rail = !rail"
+						></v-btn>
+					</template>
+					<!-- :prepend-avatar="imgUrl" -->
+				</v-list-item>
+			</template>
 		</v-list>
 
 		<v-divider color="black"></v-divider>
