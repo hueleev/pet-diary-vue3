@@ -45,6 +45,13 @@
 				:active="$route.name == 'grooming'"
 				to="grooming"
 			></v-list-item>
+			<v-list-item
+				prepend-icon="mdi-palette"
+				title="Painting"
+				value="painting"
+				:active="$route.name == 'painting'"
+				to="painting"
+			></v-list-item>
 			<!-- <v-list-item
 						prepend-icon="mdi-star"
 						title="Starred"
