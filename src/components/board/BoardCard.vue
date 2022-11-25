@@ -1,6 +1,12 @@
 <template>
 	<v-col cols="12" sm="6" md="4" lg="3">
-		<v-card :title="props.title" variant="outlined">
+		<v-card variant="outlined">
+			<!-- :title="props.title" -->
+			<v-card-item :title="props.title">
+				<template v-slot:subtitle>
+					{{ createdDate }}
+				</template>
+			</v-card-item>
 			<v-card-actions>
 				<v-spacer></v-spacer>
 				<!-- <v-btn variant="outlined">Click me</v-btn> -->
@@ -22,13 +28,21 @@
 </template>
 
 <script setup>
+import { computed, inject } from 'vue';
 import { ref } from 'vue';
 
 const props = defineProps({
 	title: String,
 	content: String,
+	createDt: String,
+	updateDt: String,
 });
 const show = ref(false);
+
+const dayjs = inject('dayjs');
+const createdDate = computed(() =>
+	dayjs(props.createDt).format('YYYY. MM. DD HH:mm:ss'),
+);
 </script>
 
 <style lang="scss" scoped></style>

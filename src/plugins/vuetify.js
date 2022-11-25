@@ -7,7 +7,7 @@ import { createVuetify } from 'vuetify';
 
 export default createVuetify({
 	display: {
-		mobileBreakpoint: 'sm',
+		mobileBreakpoint: 'md',
 		thresholds: {
 			xs: 0,
 			sm: 340,
