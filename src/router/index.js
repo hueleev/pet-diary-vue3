@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import BoardView from '../views/BoardView.vue';
-import GroomingView from '../views/GroomingView.vue';
+import DogsView from '../views/DogsView.vue';
 import PaintingView from '../views/PaintingView.vue';
 
 const router = createRouter({
@@ -16,9 +16,9 @@ const router = createRouter({
 			component: BoardView,
 		},
 		{
-			path: '/grooming',
-			name: 'grooming',
-			component: GroomingView,
+			path: '/dogs',
+			name: 'dogs',
+			component: DogsView,
 		},
 		{
 			path: '/painting',

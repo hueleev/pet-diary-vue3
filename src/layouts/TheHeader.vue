@@ -39,11 +39,11 @@
 			>
 			</v-list-item>
 			<v-list-item
-				prepend-icon="mdi-account-multiple"
-				title="Grooming"
-				value="grooming"
-				:active="$route.name == 'grooming'"
-				to="grooming"
+				prepend-icon="mdi-dog"
+				title="Dogs"
+				value="dogs"
+				:active="$route.name == 'dogs'"
+				to="dogs"
 			></v-list-item>
 			<v-list-item
 				prepend-icon="mdi-palette"

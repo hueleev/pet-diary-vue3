@@ -67,22 +67,12 @@
 	</div>
 </template>
 
-<script setup />
+<script setup>
+const emit = defineEmits(['changeColor']);
+</script>
 
 <style lang="scss">
 @use 'sass:math';
-
-:root {
-	--color-fur: #ffb141;
-	--color-fur-dark: #f5832c;
-	--color-spot: #f9584c;
-	--color-snout: #544258;
-	--color-collar: #3eab6c;
-	--duration: 0.7s;
-	--semi-duration: calc(var(--duration) / 2);
-	--easing: cubic-bezier(0.5, 0, 0.5, 1);
-	--stagger: calc(-1 * var(--semi-duration) / 2);
-}
 
 *,
 *:before,
@@ -91,7 +81,8 @@
 }
 
 [class='🐕'] {
-	z-index: 1;
+	position: absolute;
+	z-index: -1;
 	height: 300px;
 	width: 300px;
 	display: flex;

@@ -1,7 +1,7 @@
 <template>
 	<div id="body">
 		<div class="color-options">
-			<input type="color" id="color" @click="onColorChange" v-model="color" />
+			<input type="color" id="color" @change="onColorChange" v-model="color" />
 			<div
 				class="color-option"
 				style="background-color: #55efc4"
@@ -157,6 +157,7 @@ function onLineWidthChange(event) {
 	myContext.value.lineWidth = event.target.value;
 }
 function onColorChange(event) {
+	console.log(event.target.value);
 	myContext.value.strokeStyle = event.target.value;
 	myContext.value.fillStyle = event.target.value;
 }

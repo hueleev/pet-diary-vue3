@@ -17,6 +17,12 @@
 				label="content"
 				variant="underlined"
 			></v-text-field>
+
+			<v-text-field
+				v-model="writer"
+				label="writer"
+				variant="underlined"
+			></v-text-field>
 		</v-container>
 		<v-divider></v-divider>
 		<v-card-actions>
@@ -30,10 +36,12 @@
 import { ref } from 'vue';
 import { useDisplay } from 'vuetify';
 import { useAxios } from '@/hooks/useAxios';
+import sha256 from 'sha256';
 const { mobile } = useDisplay();
 
 const title = ref('');
 const content = ref('');
+const writer = ref('');
 
 const emit = defineEmits(['changeType']);
 
@@ -52,7 +60,12 @@ const { execute } = useAxios(
 );
 
 const save = async () => {
-	execute({ boardTitle: title.value, boardCnt: content.value });
+	execute({
+		boardTitle: title.value,
+		boardCnt: content.value,
+		boardWriter: writer.value,
+		boardPwd: sha256(writer.value),
+	});
 };
 </script>
 
