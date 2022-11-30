@@ -67,9 +67,7 @@
 	</div>
 </template>
 
-<script setup>
-const emit = defineEmits(['changeColor']);
-</script>
+<script setup></script>
 
 <style lang="scss">
 @use 'sass:math';
