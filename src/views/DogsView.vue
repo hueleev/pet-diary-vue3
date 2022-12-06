@@ -1,43 +1,50 @@
 <template>
-	<div class="d-flex justify-center" style="background-color: white">
+	<v-card
+		tile
+		flat
+		class="d-flex justify-center"
+		style="background-color: white"
+	>
 		<v-btn-toggle
 			style="margin: 8px"
-			variant="outlined"
 			v-model="toggleType"
+			variant="outlined"
 			mandatory
 		>
 			<v-btn value="run">🐶</v-btn>
 			<v-btn value="tail">🐶</v-btn>
 		</v-btn-toggle>
-	</div>
+	</v-card>
 	<v-divider color="black" />
-	<div class="d-flex justify-center align-center pa-5 mb-10">
-		<input
-			class="mr-5"
-			type="color"
-			id="color"
-			@change="changeColor"
-			v-model="color"
-		/>
-		<div class="d-flex justify-center align-baseline" style="gap: 1rem">
-			<template v-if="toggleType == 'run'">
-				<v-btn @click="changeProperty('--color-fur')">fur</v-btn>
-				<v-btn @click="changeProperty('--color-fur-dark')">dark fur</v-btn>
-				<v-btn @click="changeProperty('--color-spot')">spot</v-btn>
-				<v-btn @click="changeProperty('--color-snout')">snout</v-btn>
-				<v-btn @click="changeProperty('--color-collar')">collar</v-btn>
-			</template>
-			<template v-if="toggleType == 'tail'">
-				<v-btn @click="changeProperty('	--color-fur-2')">fur</v-btn>
-			</template>
+	<v-card
+		tile
+		flat
+		color="transparent"
+		class="d-flex justify-center align-center mt-3"
+	>
+		<input type="color" id="color" @change="changeColor" v-model="color" />
+	</v-card>
+	<v-card
+		tile
+		flat
+		color="transparent"
+		class="d-flex flex-wrap justify-center align-center"
+	>
+		<template v-for="(item, index) in colorList[toggleType]" :key="index">
+			<v-btn class="ma-2" @click="changeProperty(item.property)">
+				{{ item.text }}
+			</v-btn>
+		</template>
+	</v-card>
+	<div>
+		<div class="d-flex justify-center" style="padding-top: 170px">
+			<TailDog v-show="toggleType == 'tail'" />
+			<RunningDogComponent
+				v-show="toggleType == 'run'"
+				@changeProperty="changeProperty"
+				style="padding: 50px"
+			/>
 		</div>
-	</div>
-	<div class="h-screen d-flex justify-center align-center">
-		<TailDog v-show="toggleType == 'tail'" />
-		<RunningDogComponent
-			v-show="toggleType == 'run'"
-			@changeProperty="changeProperty"
-		/>
 	</div>
 </template>
 
@@ -64,6 +71,37 @@ const changeColor = e => {
 	r.style.setProperty(property.value, color.value);
 	console.log('changeColor', color.value);
 };
+
+const colorList = ref({
+	run: [
+		{
+			property: '--color-fur',
+			text: 'fur',
+		},
+		{
+			property: '--color-fur-dark',
+			text: 'dark fur',
+		},
+		{
+			property: '--color-spot',
+			text: 'spot',
+		},
+		{
+			property: '--color-snout',
+			text: 'snout',
+		},
+		{
+			property: '--color-collar',
+			text: 'collar',
+		},
+	],
+	tail: [
+		{
+			property: '--color-fur-2',
+			text: 'fur',
+		},
+	],
+});
 </script>
 
 <style type="scss">
@@ -80,4 +118,11 @@ const changeColor = e => {
 
 	--color-fur-2: #eeeeee;
 }
+
+/* .v-btn--active {
+	background-color: black;
+}
+.v-btn--active .v-btn__content {
+	color: white;
+} */
 </style>

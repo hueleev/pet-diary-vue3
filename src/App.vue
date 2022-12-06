@@ -9,3 +9,7 @@
 <script setup>
 import TheHeader from '@/layouts/TheHeader.vue';
 </script>
+
+<style type="scss">
+@import './assets/custom.scss';
+</style>

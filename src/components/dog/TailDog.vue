@@ -37,7 +37,7 @@
 	position: absolute;
 	width: 50vmin;
 	height: 40vmin;
-	z-index: 0;
+	z-index: -1;
 }
 
 .heart {

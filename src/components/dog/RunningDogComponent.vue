@@ -83,9 +83,8 @@
 	z-index: -1;
 	height: 300px;
 	width: 300px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	//justify-content: center;
+	//align-items: center;
 
 	* {
 		position: absolute;
@@ -98,7 +97,7 @@
 		bottom: percentage(math.div(40px, 300px));
 		left: 0;
 		width: 100%;
-		height: percentage(math.div(10px, 300px));
+		height: percentage(math.div(30px, 300px));
 		// background-color: #d3d1d1;
 		border-radius: 2px;
 		animation: shadow calc(1 * var(--semi-duration)) infinite;
