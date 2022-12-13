@@ -37,7 +37,7 @@
 		</template>
 	</v-card>
 	<div>
-		<div class="d-flex justify-center" style="padding-top: 170px">
+		<div class="d-flex justify-center" style="padding-top: 200px">
 			<TailDog v-show="toggleType == 'tail'" />
 			<RunningDogComponent
 				v-show="toggleType == 'run'"
@@ -45,6 +45,12 @@
 				style="padding: 50px"
 			/>
 		</div>
+	</div>
+	<div
+		class="d-flex justify-center align-end"
+		style="height: calc(100vh-250px)"
+	>
+		<a href="https://wsss.tistory.com/search/강아지">Thanks</a>
 	</div>
 </template>
 
@@ -87,6 +93,14 @@ const colorList = ref({
 			text: 'spot',
 		},
 		{
+			property: '--color-eye',
+			text: 'eye',
+		},
+		{
+			property: '--color-nose',
+			text: 'nose',
+		},
+		{
 			property: '--color-snout',
 			text: 'snout',
 		},
@@ -100,6 +114,26 @@ const colorList = ref({
 			property: '--color-fur-2',
 			text: 'fur',
 		},
+		{
+			property: '--color-fur-dark-2',
+			text: 'dark fur',
+		},
+		{
+			property: '--color-heart',
+			text: 'heart',
+		},
+		{
+			property: '--color-eyes',
+			text: 'eyes',
+		},
+		{
+			property: '--color-nose-2',
+			text: 'nose',
+		},
+		{
+			property: '--color-mouse',
+			text: 'mouse',
+		},
 	],
 });
 </script>
@@ -109,7 +143,10 @@ const colorList = ref({
 	--color-fur: #ffb141;
 	--color-fur-dark: #f5832c;
 	--color-spot: #f9584c;
+
 	--color-snout: #544258;
+	--color-eye: #544258;
+	--color-nose: #544258;
 	--color-collar: #3eab6c;
 	--duration: 0.7s;
 	--semi-duration: calc(var(--duration) / 2);
@@ -117,6 +154,12 @@ const colorList = ref({
 	--stagger: calc(-1 * var(--semi-duration) / 2);
 
 	--color-fur-2: #eeeeee;
+	--color-fur-dark-2: #f79e38;
+
+	--color-heart: #e64356;
+	--color-eyes: #000;
+	--color-nose-2: #000;
+	--color-mouse: #000;
 }
 
 /* .v-btn--active {

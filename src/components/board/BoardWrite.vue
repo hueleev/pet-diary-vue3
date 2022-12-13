@@ -44,7 +44,7 @@ const content = ref('');
 const writer = ref('');
 
 const emit = defineEmits(['changeType']);
-
+console.log(mobile);
 const { execute } = useAxios(
 	'/board',
 	{

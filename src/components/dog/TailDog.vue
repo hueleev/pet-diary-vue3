@@ -44,7 +44,7 @@
 	position: absolute;
 	width: 6%;
 	height: 7%;
-	background-color: #e64356;
+	background-color: var(--color-heart);
 	border-bottom-right-radius: 23%;
 	opacity: 0;
 	-webkit-animation-fill-mode: both;
@@ -134,7 +134,7 @@
 	height: 100%;
 	content: '';
 	border-radius: 50%;
-	background-color: #e64356;
+	background-color: var(--color-heart);
 }
 
 .heart:after {
@@ -153,7 +153,7 @@
 	position: absolute;
 	width: 100%;
 	height: 50%;
-	background-color: #f79e38;
+	background-color: var(--color-fur-dark-2);
 	border-top-right-radius: 17% 40%;
 	border-top-left-radius: 25%;
 	border-bottom-right-radius: 5% 13%;
@@ -222,7 +222,7 @@
 	left: 92%;
 	width: 10%;
 	height: 45%;
-	background-color: #f79e38;
+	background-color: var(--color-fur-dark-2);
 	border-top-right-radius: 30% 30%;
 	border-top-left-radius: 40% 30%;
 	border-bottom-right-radius: 30% 40%;
@@ -264,7 +264,7 @@
 	left: -7%;
 	width: 100%;
 	height: 50%;
-	background-color: #f79e38;
+	background-color: var(--color-fur-dark-2);
 	border-radius: 50%;
 	-webkit-animation: dog-tail-before 160ms ease-out infinite;
 	animation: dog-tail-before 160ms ease-out infinite;
@@ -329,7 +329,7 @@
 .legs__back {
 	width: 10%;
 	height: 100%;
-	background-color: #f79e38;
+	background-color: var(--color-fur-dark-2);
 	position: absolute;
 	border-bottom-right-radius: 100%;
 	border-bottom-left-radius: 100%;
@@ -382,7 +382,7 @@
 .face:before {
 	content: '';
 	position: absolute;
-	background-color: #f79e38;
+	background-color: var(--color-fur-dark-2);
 }
 .face:after {
 	width: 27%;
@@ -413,7 +413,7 @@
 	position: absolute;
 	border-radius: 100%;
 	top: 24%;
-	background-color: #000;
+	background-color: var(--color-eyes);
 	z-index: 6;
 	-webkit-animation: dog-eye 1800ms infinite;
 	animation: dog-eye 1800ms infinite;
@@ -455,7 +455,7 @@
 
 .mouth {
 	background-color: transparent;
-	border-color: #000;
+	border-color: var(--color-mouse);
 	width: 44%;
 	border-style: solid;
 	border-width: 0.7vmin;
@@ -483,7 +483,7 @@
 	height: 47%;
 	width: 19%;
 	z-index: 1;
-	background-color: #e99036;
+	background-color: var(--color-fur-dark-2);
 	border-top-left-radius: 68% 100%;
 	border-top-right-radius: 100% 100%;
 	-webkit-transform-origin: bottom center;
@@ -537,7 +537,7 @@
 	height: 38%;
 	width: 18%;
 	z-index: 1;
-	background-color: #f79e38;
+	background-color: var(--color-fur-dark-2);
 	border-top-left-radius: 56% 100%;
 	border-top-right-radius: 100% 100%;
 	-webkit-transform-origin: bottom center;
@@ -604,7 +604,7 @@
 	position: absolute;
 	width: 50%;
 	height: 55%;
-	background-color: #000;
+	background-color: var(--color-nose-2);
 	border-radius: 100%;
 	left: -7%;
 	top: -18%;

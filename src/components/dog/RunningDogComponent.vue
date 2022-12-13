@@ -228,7 +228,7 @@
 }
 
 .snout {
-	--color: var(--color-snout);
+	--color: var(--color-nose);
 	width: 25%;
 	height: 0;
 	padding-top: 25%;
@@ -319,7 +319,7 @@
 
 .eye {
 	--size: 6%;
-	--color: var(--color-snout);
+	--color: var(--color-eye);
 	width: var(--size);
 	height: 0;
 	padding: var(--size);

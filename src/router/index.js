@@ -3,6 +3,8 @@ import BoardView from '../views/BoardView.vue';
 import DogsView from '../views/DogsView.vue';
 import PaintingView from '../views/PaintingView.vue';
 
+import LoginView from '../views/user/LoginView.vue';
+
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -24,6 +26,11 @@ const router = createRouter({
 			path: '/painting',
 			name: 'painting',
 			component: PaintingView,
+		},
+		{
+			path: '/login',
+			name: 'login',
+			component: LoginView,
 		},
 	],
 });
