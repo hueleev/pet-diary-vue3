@@ -37,8 +37,11 @@
 		</template>
 	</v-card>
 	<div>
-		<div class="d-flex justify-center" style="padding-top: 200px">
-			<TailDog v-show="toggleType == 'tail'" />
+		<div
+			class="d-flex justify-center"
+			:style="mobile ? 'padding-top: 40%' : 'padding-top: 20%'"
+		>
+			<TailDog v-show="toggleType == 'tail'" style="padding-top: 50px" />
 			<RunningDogComponent
 				v-show="toggleType == 'run'"
 				@changeProperty="changeProperty"
@@ -47,10 +50,10 @@
 		</div>
 	</div>
 	<div
-		class="d-flex justify-center align-end"
-		style="height: calc(100vh-250px)"
+		class="d-flex justify-center align-end pb-4"
+		style="height: calc(100vh - 53%)"
 	>
-		<a href="https://wsss.tistory.com/search/강아지">Thanks</a>
+		<a href="https://wsss.tistory.com/search/강아지" target="_blank">Thanks</a>
 	</div>
 </template>
 
@@ -58,6 +61,8 @@
 import RunningDogComponent from '@/components/dog/RunningDogComponent.vue';
 import TailDog from '@/components/dog/TailDog.vue';
 import { ref } from 'vue';
+import { useDisplay } from 'vuetify';
+const { mobile } = useDisplay();
 
 const r = document.querySelector(':root');
 const rs = getComputedStyle(r);

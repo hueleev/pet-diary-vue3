@@ -20,14 +20,18 @@
 			<template v-if="!rail">
 				<v-list-item>
 					<template v-slot:title>
-						<v-btn variant="text" size="large" block @click="goPage('login')">
+						<v-btn variant="text" size="large" @click="goPage('login')">
 							login
+						</v-btn>
+						<v-btn variant="text" size="large" @click="goPage('join')">
+							join
 						</v-btn>
 						<!-- MOZZI -->
 					</template>
 					<template v-slot:append>
 						<v-btn
 							variant="text"
+							size="small"
 							icon="mdi-chevron-left"
 							@click.stop="rail = !rail"
 						></v-btn>
@@ -45,7 +49,7 @@
 				title="Board"
 				:active="$route.name == 'board'"
 				value="myboard"
-				to="board"
+				to="/board"
 			>
 			</v-list-item>
 			<v-list-item
@@ -53,14 +57,14 @@
 				title="Dogs"
 				value="dogs"
 				:active="$route.name == 'dogs'"
-				to="dogs"
+				to="/dogs"
 			></v-list-item>
 			<v-list-item
 				prepend-icon="mdi-palette"
 				title="Painting"
 				value="painting"
 				:active="$route.name == 'painting'"
-				to="painting"
+				to="/painting"
 			></v-list-item>
 			<!-- <v-list-item
 						prepend-icon="mdi-star"
@@ -76,8 +80,8 @@
 <script setup>
 import { ref } from 'vue';
 import imgUrl from '../assets/img/avatar.png';
-import imgUrl2 from '../assets/img/avatar2.png';
-import imgUrl3 from '../assets/img/avatar3.jpg';
+// import imgUrl2 from '../assets/img/avatar2.png';
+// import imgUrl3 from '../assets/img/avatar3.jpg';
 import { useRouter } from 'vue-router';
 const drawer = ref(true);
 const rail = ref(true);

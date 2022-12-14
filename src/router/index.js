@@ -4,6 +4,7 @@ import DogsView from '../views/DogsView.vue';
 import PaintingView from '../views/PaintingView.vue';
 
 import LoginView from '../views/user/LoginView.vue';
+import JoinView from '../views/user/JoinView.vue';
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,9 +29,20 @@ const router = createRouter({
 			component: PaintingView,
 		},
 		{
-			path: '/login',
-			name: 'login',
-			component: LoginView,
+			path: '/user',
+			name: 'user',
+			children: [
+				{
+					path: 'login',
+					name: 'login',
+					component: LoginView,
+				},
+				{
+					path: 'join',
+					name: 'join',
+					component: JoinView,
+				},
+			],
 		},
 	],
 });

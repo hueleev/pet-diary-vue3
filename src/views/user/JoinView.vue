@@ -7,7 +7,7 @@
 			:max-width="mobile ? '90%' : '50%'"
 		>
 			<v-img :src="imgUrl" height="250px" cover> </v-img>
-			<v-card-title align="center">LOGIN 개발중</v-card-title>
+			<v-card-title align="center">JOIN 개발중 </v-card-title>
 			<v-container>
 				<v-text-field
 					v-model="username"
@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import imgUrl from '../../assets/img/login.png';
+import imgUrl from '../../assets/img/join.jpg';
 import { useDisplay } from 'vuetify';
 import { ref } from 'vue';
 // import { login } from '../../api/user';

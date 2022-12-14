@@ -27,7 +27,7 @@
 		<v-divider></v-divider>
 		<v-card-actions>
 			<v-spacer></v-spacer>
-			<v-btn variant="tonal" color="black" @click="save">안녕!</v-btn>
+			<v-btn variant="outlined" color="black" @click="save">안녕!</v-btn>
 		</v-card-actions>
 	</v-card>
 </template>
