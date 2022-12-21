@@ -1,5 +1,21 @@
 <template>
 	<div id="body">
+		<div
+			v-show="mobile"
+			style="
+				width: 100vw;
+				height: 100vh;
+				background: rgb(255 255 255 / 70%);
+				z-index: 1;
+				position: absolute;
+				color: black;
+				text-align: center;
+				padding-top: 100%;
+				font-size: xx-large;
+			"
+		>
+			PC화면으로 사용하개
+		</div>
 		<div class="color-options">
 			<input type="color" id="color" @change="onColorChange" v-model="color" />
 			<div
@@ -98,6 +114,9 @@
 
 <script setup>
 import { onMounted, reactive, ref, toRefs } from 'vue';
+
+import { useDisplay } from 'vuetify';
+const { mobile } = useDisplay();
 
 let color = ref('black');
 let lineWidth = ref(5);

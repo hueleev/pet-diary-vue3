@@ -28,6 +28,12 @@
 								<v-btn
 									variant="text"
 									size="small"
+									icon="mdi-pencil"
+									@click="dialog = true"
+								></v-btn>
+								<v-btn
+									variant="text"
+									size="small"
 									icon="mdi-delete"
 									@click="deleteBoard"
 								></v-btn>
@@ -38,6 +44,18 @@
 			</v-expand-transition>
 		</v-card>
 	</v-col>
+	<v-dialog v-model="dialog">
+		<v-card class="py-3">
+			<v-card-text>
+				<BoardUpdate :boardSn="props.boardSn" @close="close" />
+			</v-card-text>
+			<!-- <v-card-actions>
+				<v-btn color="primary" block @click="dialog = false"
+					>Close Dialog</v-btn
+				>
+			</v-card-actions> -->
+		</v-card>
+	</v-dialog>
 </template>
 
 <script setup>
@@ -45,8 +63,11 @@ import { computed, inject } from 'vue';
 import { ref } from 'vue';
 import { useAxios } from '@/hooks/useAxios';
 import { useRouter } from 'vue-router';
+import BoardUpdate from './BoardUpdate.vue';
 
 const router = useRouter();
+
+const dialog = ref(false);
 
 const props = defineProps({
 	boardSn: Number,
@@ -56,6 +77,7 @@ const props = defineProps({
 	createDt: String,
 	updateDt: String,
 });
+
 const show = ref(false);
 
 const dayjs = inject('dayjs');
@@ -75,7 +97,13 @@ const { execute } = useAxios(
 );
 
 const deleteBoard = () => {
-	execute();
+	if (confirm('삭제할거개?')) {
+		execute();
+	}
+};
+
+const close = () => {
+	dialog.value = false;
 };
 </script>
 

@@ -34,11 +34,14 @@ npm run build
 npm run lint
 ```
 
-### 배포
-```
-$ npm run build
-$ cp dist/index.html dist/404.html
-$ git add dist -f
-$ git commit -m "Adding dist"
-$ git subtree push --prefix dist origin gh-pages
-```
+### Detail
+
+* /post/:id
+  * const route = useRoute(); const id = route.params.id; / $route 
+* route에서 `props: true` 설정해주면, vue파일내에서 defineProps로 받을 수 있다.
+  ```
+  props: route = > { id: parseInt(route.params.id)}
+  ```
+  ```
+  props: {id: 1}
+  ```
