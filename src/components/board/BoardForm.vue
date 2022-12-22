@@ -24,7 +24,7 @@
 			</v-text-field>
 			<v-text-field
 				:label="type == 'insert' ? '글쓴이' : ''"
-				:color="type == 'update' ? 'error' : 'primary'"
+				:color="type == 'update' ? 'error' : 'black'"
 				variant="underlined"
 				placeholder="온니가"
 				:readonly="type == 'update'"

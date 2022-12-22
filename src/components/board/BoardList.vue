@@ -7,6 +7,7 @@
 	<v-row>
 		<template v-for="board in boards" :key="board.boardSn">
 			<BoardCard
+				@refresh="refresh"
 				:boardSn="board.boardSn"
 				:title="board.boardTitle"
 				:content="board.boardCnt"
@@ -22,17 +23,21 @@
 import BoardCard from '@/components/board/BoardCard.vue';
 import { useAxios } from '@/hooks/useAxios';
 
-defineProps({
-	boards: Array,
-});
-
-const { data: boards, loading } = useAxios(
+const {
+	execute,
+	data: boards,
+	loading,
+} = useAxios(
 	'/board/list',
 	{ method: 'get' },
 	{
 		immediate: true,
 	},
 );
+
+const refresh = () => {
+	execute();
+};
 </script>
 
 <style lang="scss" scoped></style>

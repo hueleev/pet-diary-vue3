@@ -14,8 +14,9 @@
 
 <script setup>
 import BoardForm from '@/components/board/BoardForm.vue';
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import { useAxios } from '@/hooks/useAxios';
+import { useAlert } from '@/composables/alert';
 import sha256 from 'sha256';
 
 const props = defineProps({
@@ -33,7 +34,6 @@ useAxios(
 	{
 		immediate: true,
 		onSuccess: ({ data }) => {
-			console.log(data);
 			form.value = {
 				boardTitle: data.boardTitle,
 				boardCnt: data.boardCnt,
@@ -53,20 +53,35 @@ const { execute } = useAxios(
 	{
 		immediate: false,
 		onSuccess: () => {
-			// list 모드로 변경
-			/* emit('changeType', 'list'); */
 			emit('close');
+			vSuccess('수정되었개');
+		},
+		onError: ({ response }) => {
+			vAlert('비밀번호를<br/> 확인해주개');
+			const { data } = response;
 		},
 	},
 );
 
 const update = async () => {
-	execute({
-		...form.value,
-		boardPwd: sha256(form.value.boardPwd),
-	});
+	const { boardTitle, boardCnt, boardWriter, boardPwd } = form.value;
+	if (
+		isEmpty(boardTitle) ||
+		isEmpty(boardCnt) ||
+		isEmpty(boardWriter) ||
+		isEmpty(boardPwd)
+	) {
+		vAlert('모든 항목을 입력해주개');
+	} else {
+		execute({
+			...form.value,
+			boardPwd: sha256(form.value.boardPwd),
+		});
+	}
 };
 
+const isEmpty = inject('isEmpty');
+const { vSuccess, vAlert } = useAlert();
 const emit = defineEmits(['close']);
 </script>
 

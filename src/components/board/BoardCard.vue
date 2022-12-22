@@ -29,13 +29,13 @@
 									variant="text"
 									size="small"
 									icon="mdi-pencil"
-									@click="dialog = true"
+									@click="open('update')"
 								></v-btn>
 								<v-btn
 									variant="text"
 									size="small"
 									icon="mdi-delete"
-									@click="deleteBoard"
+									@click="open('delete')"
 								></v-btn>
 							</div>
 						</div>
@@ -44,16 +44,20 @@
 			</v-expand-transition>
 		</v-card>
 	</v-col>
-	<v-dialog v-model="dialog">
+	<v-dialog v-model="dialog.show">
 		<v-card class="py-3">
 			<v-card-text>
-				<BoardUpdate :boardSn="props.boardSn" @close="close" />
+				<BoardUpdate
+					v-show="dialog.type == 'update'"
+					:boardSn="props.boardSn"
+					@close="close"
+				/>
+				<BoardDelete
+					v-show="dialog.type == 'delete'"
+					:boardSn="props.boardSn"
+					@close="close"
+				/>
 			</v-card-text>
-			<!-- <v-card-actions>
-				<v-btn color="primary" block @click="dialog = false"
-					>Close Dialog</v-btn
-				>
-			</v-card-actions> -->
 		</v-card>
 	</v-dialog>
 </template>
@@ -61,13 +65,13 @@
 <script setup>
 import { computed, inject } from 'vue';
 import { ref } from 'vue';
-import { useAxios } from '@/hooks/useAxios';
-import { useRouter } from 'vue-router';
 import BoardUpdate from './BoardUpdate.vue';
+import BoardDelete from './BoardDelete.vue';
 
-const router = useRouter();
-
-const dialog = ref(false);
+const dialog = ref({
+	type: '',
+	show: false,
+});
 
 const props = defineProps({
 	boardSn: Number,
@@ -85,26 +89,17 @@ const createdDate = computed(() =>
 	dayjs(props.createDt).format('YYYY. MM. DD HH:mm:ss'),
 );
 
-const { execute } = useAxios(
-	`/board/${props.boardSn}`,
-	{ method: 'delete' },
-	{
-		immediate: false,
-		onSuccess: () => {
-			router.go();
-		},
-	},
-);
-
-const deleteBoard = () => {
-	if (confirm('삭제할거개?')) {
-		execute();
-	}
+const open = type => {
+	dialog.value.show = true;
+	dialog.value.type = type;
 };
-
 const close = () => {
-	dialog.value = false;
+	dialog.value.show = false;
+	dialog.value.type = '';
+	emit('refresh');
 };
+
+const emit = defineEmits(['refresh']);
 </script>
 
 <style lang="scss" scoped></style>

@@ -14,8 +14,9 @@
 
 <script setup>
 import BoardForm from '@/components/board/BoardForm.vue';
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import { useAxios } from '@/hooks/useAxios';
+import { useAlert } from '@/composables/alert';
 import sha256 from 'sha256';
 
 const form = ref({
@@ -25,7 +26,23 @@ const form = ref({
 	boardPwd: null,
 });
 
-const emit = defineEmits(['changeType']);
+const save = async () => {
+	const { boardTitle, boardCnt, boardWriter, boardPwd } = form.value;
+	if (
+		isEmpty(boardTitle) ||
+		isEmpty(boardCnt) ||
+		isEmpty(boardWriter) ||
+		isEmpty(boardPwd)
+	) {
+		vAlert('모든 항목을 입력해주개');
+	} else {
+		execute({
+			...form.value,
+			boardPwd: sha256(form.value.boardPwd),
+		});
+	}
+};
+
 const { execute } = useAxios(
 	'/board',
 	{
@@ -40,12 +57,9 @@ const { execute } = useAxios(
 	},
 );
 
-const save = async () => {
-	execute({
-		...form.value,
-		boardPwd: sha256(form.value.boardPwd),
-	});
-};
+const isEmpty = inject('isEmpty');
+const { vAlert } = useAlert();
+const emit = defineEmits(['changeType']);
 </script>
 
 <style lang="scss" scoped></style>

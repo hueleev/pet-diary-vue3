@@ -2,6 +2,7 @@
 	<v-app>
 		<TheHeader>
 			<v-main><router-view /></v-main>
+			<AppAlert />
 		</TheHeader>
 	</v-app>
 </template>
