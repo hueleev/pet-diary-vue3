@@ -59,6 +59,7 @@ const { execute } = useAxios(
 		onError: ({ response }) => {
 			vAlert('비밀번호를<br/> 확인해주개');
 			const { data } = response;
+			console.log(data.message);
 		},
 	},
 );

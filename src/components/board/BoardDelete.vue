@@ -29,6 +29,7 @@
 import { ref, inject } from 'vue';
 import { useAxios } from '@/hooks/useAxios';
 import { useAlert } from '@/composables/alert';
+import { useDisplay } from 'vuetify';
 import sha256 from 'sha256';
 
 const props = defineProps({
@@ -74,6 +75,7 @@ const checkPassword = () => {
 	}
 };
 
+const { mobile } = useDisplay();
 const { vSuccess, vAlert } = useAlert();
 const isEmpty = inject('isEmpty');
 const emit = defineEmits(['close']);
