@@ -1,20 +1,20 @@
 <template>
 	<v-progress-circular
-		class="d-flex ma-auto mt-10"
-		indeterminate
 		v-if="loading"
-	></v-progress-circular>
+		indeterminate
+		class="d-flex ma-auto mt-10"
+	/>
 	<v-row>
 		<template v-for="board in boards" :key="board.boardSn">
 			<BoardCard
-				@refresh="refresh"
+				@refresh="execute"
 				:boardSn="board.boardSn"
 				:title="board.boardTitle"
 				:content="board.boardCnt"
 				:boardWriter="board.boardWriter"
 				:createDt="board.create_dt"
 				:updateDt="board.update_dt"
-			></BoardCard>
+			/>
 		</template>
 	</v-row>
 </template>
@@ -23,6 +23,7 @@
 import BoardCard from '@/components/board/BoardCard.vue';
 import { useAxios } from '@/hooks/useAxios';
 
+// 게시글 목록 조회 API
 const {
 	execute,
 	data: boards,
@@ -35,9 +36,10 @@ const {
 	},
 );
 
-const refresh = () => {
+// refresh
+/* const refresh = () => {
 	execute();
-};
+}; */
 </script>
 
 <style lang="scss" scoped></style>

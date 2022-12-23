@@ -19,13 +19,19 @@ import { useAxios } from '@/hooks/useAxios';
 import { useAlert } from '@/composables/alert';
 import sha256 from 'sha256';
 
+const { vSuccess, vAlert } = useAlert(); // alert
+const isEmpty = inject('isEmpty'); // 플러그인
+const emit = defineEmits(['close']); // event
+
+// 게시글 일련번호
 const props = defineProps({
 	boardSn: Number,
 });
 
+// 게시글 form
 const form = ref({});
 
-// 조회
+// 게시글 조회 API
 useAxios(
 	`/board/${props.boardSn}`,
 	{
@@ -44,7 +50,7 @@ useAxios(
 	},
 );
 
-// 수정
+// 게시글 수정 API
 const { execute } = useAxios(
 	`/board/${props.boardSn}`,
 	{
@@ -64,6 +70,7 @@ const { execute } = useAxios(
 	},
 );
 
+// 게시글 수정
 const update = async () => {
 	const { boardTitle, boardCnt, boardWriter, boardPwd } = form.value;
 	if (
@@ -80,10 +87,6 @@ const update = async () => {
 		});
 	}
 };
-
-const isEmpty = inject('isEmpty');
-const { vSuccess, vAlert } = useAlert();
-const emit = defineEmits(['close']);
 </script>
 
 <style lang="scss" scoped></style>

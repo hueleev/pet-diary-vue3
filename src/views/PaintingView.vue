@@ -23,55 +23,55 @@
 				style="background-color: #55efc4"
 				data-color="#55efc4"
 				@click="onColorClick"
-			></div>
+			/>
 			<div
 				class="color-option"
 				style="background-color: #81ecec"
 				data-color="#81ecec"
 				@click="onColorClick"
-			></div>
+			/>
 			<div
 				class="color-option"
 				style="background-color: #74b9ff"
 				data-color="#74b9ff"
 				@click="onColorClick"
-			></div>
+			/>
 			<div
 				class="color-option"
 				style="background-color: #a29bfe"
 				data-color="#a29bfe"
 				@click="onColorClick"
-			></div>
+			/>
 			<div
 				class="color-option"
 				style="background-color: #ffeaa7"
 				data-color="#ffeaa7"
 				@click="onColorClick"
-			></div>
+			/>
 			<div
 				class="color-option"
 				style="background-color: #fab1a0"
 				data-color="#fab1a0"
 				@click="onColorClick"
-			></div>
+			/>
 			<div
 				class="color-option"
 				style="background-color: #dfe6e9"
 				data-color="#dfe6e9"
 				@click="onColorClick"
-			></div>
+			/>
 			<div
 				class="color-option"
 				style="background-color: #636e72"
 				data-color="#636e72"
 				@click="onColorClick"
-			></div>
+			/>
 			<div
 				class="color-option"
 				style="background-color: #2d3436"
 				data-color="#2d3436"
 				@click="onColorClick"
-			></div>
+			/>
 		</div>
 		<canvas
 			ref="myCanvas"
@@ -83,7 +83,7 @@
 			@mouseup="stopPainting"
 			@mouseleave="stopPainting"
 			@click="onCanvasClick"
-		></canvas>
+		/>
 		<div class="btns">
 			<input
 				id="line-width"

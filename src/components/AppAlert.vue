@@ -1,16 +1,4 @@
 <template>
-	<!-- <v-alert
-			v-for="({ message, type }, index) in alert"
-			:key="index"
-			class="alert"
-			icon="$error"
-			role="alert"
-			variant="tonal"
-			:color="typeStyle(type)"
-			:style="`border: 1px ${typeStyle(type)} solid; z-index:3000`"
-			:text="message"
-		>
-		</v-alert> -->
 	<template v-if="alerts.length !== 0">
 		<v-dialog
 			hide-overlay
@@ -35,8 +23,10 @@
 import { useAlert } from '@/composables/alert';
 import { ref } from 'vue';
 
-const { alerts } = useAlert();
+const { alerts } = useAlert(); // alert
+
 const dialog = ref(true);
+
 const typeStyle = type => (type === 'error' ? 'red' : 'black');
 </script>
 

@@ -2,49 +2,49 @@
 	<div class="🐕">
 		<div class="torso">
 			<div class="fur">
-				<div class="spot"></div>
+				<div class="spot" />
 			</div>
 			<div class="neck">
-				<div class="fur"></div>
+				<div class="fur" />
 				<div class="head">
 					<div class="fur">
-						<div class="snout"></div>
+						<div class="snout" />
 					</div>
 					<div class="ears">
 						<div class="ear">
-							<div class="fur"></div>
+							<div class="fur" />
 						</div>
 						<div class="ear">
-							<div class="fur"></div>
+							<div class="fur" />
 						</div>
 					</div>
-					<div class="eye"></div>
+					<div class="eye" />
 				</div>
-				<div class="collar"></div>
+				<div class="collar" />
 			</div>
 			<div class="legs">
 				<div class="leg">
-					<div class="fur"></div>
+					<div class="fur" />
 					<div class="leg-inner">
-						<div class="fur"></div>
+						<div class="fur" />
 					</div>
 				</div>
 				<div class="leg">
-					<div class="fur"></div>
+					<div class="fur" />
 					<div class="leg-inner">
-						<div class="fur"></div>
+						<div class="fur" />
 					</div>
 				</div>
 				<div class="leg">
-					<div class="fur"></div>
+					<div class="fur" />
 					<div class="leg-inner">
-						<div class="fur"></div>
+						<div class="fur" />
 					</div>
 				</div>
 				<div class="leg">
-					<div class="fur"></div>
+					<div class="fur" />
 					<div class="leg-inner">
-						<div class="fur"></div>
+						<div class="fur" />
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 							<div class="tail">
 								<div class="tail">
 									<div class="tail">
-										<div class="tail"></div>
+										<div class="tail" />
 									</div>
 								</div>
 							</div>

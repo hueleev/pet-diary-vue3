@@ -6,27 +6,22 @@
 			width="400"
 			:max-width="mobile ? '90%' : '50%'"
 		>
-			<v-img :src="imgUrl" height="250px" cover> </v-img>
-			<v-card-title align="center">JOIN 개발중 </v-card-title>
+			<v-img :src="imgUrl" height="250px" cover />
+			<v-card-title align="center">JOIN 개발중</v-card-title>
 			<v-container>
-				<v-text-field
-					v-model="username"
-					label="id"
-					variant="underlined"
-				></v-text-field>
-
+				<v-text-field v-model="username" label="id" variant="underlined" />
 				<v-text-field
 					v-model="password"
 					label="password"
 					variant="underlined"
-				></v-text-field>
+				/>
 			</v-container>
-			<v-divider></v-divider>
+			<v-divider />
 			<v-card-actions>
-				<v-spacer></v-spacer>
-				<v-btn variant="outlined" color="black" @click="loginProcess"
-					>LOGIN</v-btn
-				>
+				<v-spacer />
+				<v-btn variant="outlined" color="black" @click="loginProcess">
+					LOGIN
+				</v-btn>
 			</v-card-actions>
 		</v-card>
 	</div>
@@ -49,7 +44,6 @@ const loginProcess = async () => {
 	// 	},
 	// );
 };
-console.log(mobile);
 </script>
 
 <style lang="scss" scoped></style>

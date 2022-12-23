@@ -7,15 +7,13 @@
 		:touchless="true"
 		@click.stop="rail = false"
 	>
-		<!-- 
-		rail -->
 		<v-list>
 			<v-list-item nav>
 				<v-img
 					:src="imgUrl"
 					@click.stop="rail = !rail"
 					style="max-width: 100%; border-radius: 100%"
-				></v-img>
+				/>
 			</v-list-item>
 			<template v-if="!rail">
 				<v-list-item>
@@ -34,14 +32,13 @@
 							size="small"
 							icon="mdi-chevron-left"
 							@click.stop="rail = !rail"
-						></v-btn>
+						/>
 					</template>
-					<!-- :prepend-avatar="imgUrl" -->
 				</v-list-item>
 			</template>
 		</v-list>
 
-		<v-divider color="black"></v-divider>
+		<v-divider color="black" />
 
 		<v-list density="compact" nav>
 			<v-list-item
@@ -50,22 +47,21 @@
 				:active="$route.name == 'board'"
 				value="myboard"
 				to="/board"
-			>
-			</v-list-item>
+			/>
 			<v-list-item
 				prepend-icon="mdi-dog"
 				title="Dogs"
 				value="dogs"
 				:active="$route.name == 'dogs'"
 				to="/dogs"
-			></v-list-item>
+			/>
 			<v-list-item
 				prepend-icon="mdi-palette"
 				title="Painting"
 				value="painting"
 				:active="$route.name == 'painting'"
 				to="/painting"
-			></v-list-item>
+			/>
 			<!-- <v-list-item
 						prepend-icon="mdi-star"
 						title="Starred"
@@ -74,7 +70,7 @@
 					></v-list-item> -->
 		</v-list>
 	</v-navigation-drawer>
-	<slot></slot>
+	<slot />
 </template>
 
 <script setup>

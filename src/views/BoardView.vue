@@ -12,11 +12,8 @@
 	</div>
 	<v-divider color="black" />
 	<v-container fluid>
-		<BoardList v-if="toggleType == 'list'"></BoardList>
-		<BoardWrite
-			v-if="toggleType == 'write'"
-			@changeType="changeType"
-		></BoardWrite>
+		<BoardList v-if="toggleType == 'list'" />
+		<BoardWrite v-if="toggleType == 'write'" @changeType="changeType" />
 	</v-container>
 </template>
 

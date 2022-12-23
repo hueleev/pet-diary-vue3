@@ -1,29 +1,29 @@
 <template>
 	<div class="dog">
-		<div class="heart heart--1"></div>
-		<div class="heart heart--2"></div>
-		<div class="heart heart--3"></div>
-		<div class="heart heart--4"></div>
+		<div class="heart heart--1" />
+		<div class="heart heart--2" />
+		<div class="heart heart--3" />
+		<div class="heart heart--4" />
 		<div class="head2">
-			<div class="year year--left"></div>
-			<div class="year year--right"></div>
-			<div class="nose"></div>
+			<div class="year year--left" />
+			<div class="year year--right" />
+			<div class="nose" />
 			<div class="face">
-				<div class="eye2 eye--left"></div>
-				<div class="eye2 eye--right"></div>
-				<div class="mouth"></div>
+				<div class="eye2 eye--left" />
+				<div class="eye2 eye--right" />
+				<div class="mouth" />
 			</div>
 		</div>
 		<div class="body">
-			<div class="cheast"></div>
-			<div class="back"></div>
+			<div class="cheast" />
+			<div class="back" />
 			<div class="legs2">
-				<div class="legs__front legs__front--left"></div>
-				<div class="legs__front legs__front--right"></div>
-				<div class="legs__back legs__back--left"></div>
-				<div class="legs__back legs__back--right"></div>
+				<div class="legs__front legs__front--left" />
+				<div class="legs__front legs__front--right" />
+				<div class="legs__back legs__back--left" />
+				<div class="legs__back legs__back--right" />
 			</div>
-			<div class="tail2"></div>
+			<div class="tail2" />
 		</div>
 	</div>
 </template>

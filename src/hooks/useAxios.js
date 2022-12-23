@@ -2,12 +2,14 @@ import axios from 'axios';
 import { isRef, ref, unref, watchEffect } from 'vue';
 
 axios.defaults.baseURL = import.meta.env.VITE_APP_API_URL;
+
 const defaultConfig = {
 	method: 'get',
 };
 const defaultOptions = {
 	immediate: true,
 };
+
 export const useAxios = (url, config = {}, options = {}) => {
 	const response = ref(null);
 	const data = ref(null);
