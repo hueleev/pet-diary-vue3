@@ -4,7 +4,7 @@
 			class="mx-auto"
 			variant="outlined"
 			width="400"
-			:max-width="mobile ? '90%' : '50%'"
+			:max-width="useDisplay().mobile ? '90%' : '50%'"
 		>
 			<v-img :src="imgUrl" height="250px" cover />
 			<v-card-title align="center">JOIN 개발중</v-card-title>
@@ -32,7 +32,6 @@ import imgUrl from '../../assets/img/join.jpg';
 import { useDisplay } from 'vuetify';
 import { ref } from 'vue';
 // import { login } from '../../api/user';
-const { mobile } = useDisplay();
 
 const username = ref('');
 const password = ref('');

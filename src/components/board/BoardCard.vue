@@ -50,7 +50,10 @@
 	</v-col>
 
 	<!-- 수정/삭제 팝업 -->
-	<v-dialog v-model="dialog.show">
+	<v-dialog
+		v-model="dialog.show"
+		:max-width="useDisplay().mobile ? '100%' : '50%'"
+	>
 		<v-card class="py-3">
 			<v-card-text>
 				<BoardUpdate
@@ -71,6 +74,7 @@
 <script setup>
 import BoardUpdate from './BoardUpdate.vue';
 import BoardDelete from './BoardDelete.vue';
+import { useDisplay } from 'vuetify';
 import { computed, inject } from 'vue';
 import { ref } from 'vue';
 

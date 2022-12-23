@@ -1,9 +1,10 @@
 <template>
-	<template v-if="alerts.length !== 0">
+	<template>
 		<v-dialog
 			hide-overlay
 			v-for="({ message, type }, index) in alerts"
 			:key="index"
+			persistent
 			v-model="dialog"
 		>
 			<v-alert

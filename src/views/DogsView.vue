@@ -39,7 +39,7 @@
 	<div>
 		<div
 			class="d-flex justify-center"
-			:style="mobile ? 'padding-top: 40%' : 'padding-top: 20%'"
+			:style="useDisplay().mobile ? 'padding-top: 40%' : 'padding-top: 20%'"
 		>
 			<TailDog v-show="toggleType == 'tail'" style="padding-top: 50px" />
 			<RunningDogComponent
@@ -62,7 +62,6 @@ import RunningDogComponent from '@/components/dog/RunningDogComponent.vue';
 import TailDog from '@/components/dog/TailDog.vue';
 import { ref } from 'vue';
 import { useDisplay } from 'vuetify';
-const { mobile } = useDisplay();
 
 const r = document.querySelector(':root');
 const rs = getComputedStyle(r);

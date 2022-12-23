@@ -3,7 +3,7 @@
 		class="mx-auto"
 		variant="outlined"
 		title="모찌에게"
-		:max-width="mobile ? '100%' : '50%'"
+		:max-width="useDisplay().mobile ? '100%' : '50%'"
 	>
 		<v-container>
 			<v-text-field
@@ -48,8 +48,6 @@
 
 <script setup>
 import { useDisplay } from 'vuetify';
-
-const { mobile } = useDisplay(); // 모바일 확인
 
 // event emit
 defineEmits([

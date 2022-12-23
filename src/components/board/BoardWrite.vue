@@ -34,7 +34,7 @@ const save = async () => {
 		isEmpty(boardWriter) ||
 		isEmpty(boardPwd)
 	) {
-		vAlert('모든 항목을 입력해주개');
+		vAlert('모든 항목을<br/>입력해주개');
 	} else {
 		execute({
 			...form.value,

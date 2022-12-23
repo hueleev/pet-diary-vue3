@@ -1,7 +1,7 @@
 <template>
 	<div id="body">
 		<div
-			v-show="mobile"
+			v-show="useDisplay().mobile"
 			style="
 				width: 100vw;
 				height: 100vh;
@@ -116,7 +116,6 @@
 import { onMounted, reactive, ref, toRefs } from 'vue';
 
 import { useDisplay } from 'vuetify';
-const { mobile } = useDisplay();
 
 let color = ref('black');
 let lineWidth = ref(5);

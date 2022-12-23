@@ -1,10 +1,5 @@
 <template>
-	<v-card
-		class="mx-auto"
-		variant="outlined"
-		title="비밀번호 확인"
-		:max-width="mobile ? '100%' : '50%'"
-	>
+	<v-card class="mx-auto" variant="outlined" title="비밀번호 확인">
 		<v-container>
 			<v-text-field
 				label="비밀번호"
@@ -28,10 +23,8 @@
 import { ref, inject } from 'vue';
 import { useAxios } from '@/hooks/useAxios';
 import { useAlert } from '@/composables/alert';
-import { useDisplay } from 'vuetify';
 import sha256 from 'sha256';
 
-const { mobile } = useDisplay(); // 모바일 여부
 const { vSuccess, vAlert } = useAlert(); // alert
 const isEmpty = inject('isEmpty'); // string empty 플러그인
 const emit = defineEmits(['close']); // event emit
@@ -67,7 +60,7 @@ const { execute: checkExecute } = useAxios(
 			if (data) {
 				deleteExecute();
 			} else {
-				vAlert('비밀번호 틀렸개..');
+				vAlert('비밀번호<br/>틀렸개..');
 			}
 		},
 	},
@@ -76,7 +69,7 @@ const { execute: checkExecute } = useAxios(
 // 비밀번호 확인 function
 const checkPassword = () => {
 	if (isEmpty(boardPwd.value)) {
-		vAlert('비밀번호를 입력해주개');
+		vAlert('비밀번호를<br/>입력해주개');
 	} else {
 		checkExecute({
 			boardPwd: sha256(boardPwd.value),
