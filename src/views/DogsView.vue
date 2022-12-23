@@ -39,7 +39,7 @@
 	<div>
 		<div
 			class="d-flex justify-center"
-			:style="useDisplay().mobile ? 'padding-top: 40%' : 'padding-top: 20%'"
+			:style="mobile ? 'padding-top: 40%' : 'padding-top: 20%'"
 		>
 			<TailDog v-show="toggleType == 'tail'" style="padding-top: 50px" />
 			<RunningDogComponent
@@ -68,6 +68,7 @@ const rs = getComputedStyle(r);
 const toggleType = ref('run');
 const property = ref('--color-fur');
 const color = ref('red');
+const { mobile } = useDisplay(); // 모바일 확인
 // var r = document.querySelector(':root');
 
 const changeProperty = key => {

@@ -1,10 +1,5 @@
 <template>
-	<v-card
-		class="mx-auto"
-		variant="outlined"
-		title="모찌에게"
-		:max-width="useDisplay().mobile ? '100%' : '50%'"
-	>
+	<v-card class="mx-auto" variant="outlined" title="모찌에게">
 		<v-container>
 			<v-text-field
 				:label="checkInsert('제목', '')"
@@ -47,8 +42,6 @@
 </template>
 
 <script setup>
-import { useDisplay } from 'vuetify';
-
 // event emit
 defineEmits([
 	'update:title',

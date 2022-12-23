@@ -50,10 +50,7 @@
 	</v-col>
 
 	<!-- 수정/삭제 팝업 -->
-	<v-dialog
-		v-model="dialog.show"
-		:max-width="useDisplay().mobile ? '100%' : '50%'"
-	>
+	<v-dialog v-model="dialog.show" :max-width="mobile ? '100%' : '50%'">
 		<v-card class="py-3">
 			<v-card-text>
 				<BoardUpdate
@@ -80,6 +77,7 @@ import { ref } from 'vue';
 
 const dayjs = inject('dayjs'); // dayjs 플러그인
 const emit = defineEmits(['refresh']); // event emit
+const { mobile } = useDisplay(); // 모바일 확인
 
 // 게시판 상세
 const props = defineProps({

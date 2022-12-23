@@ -4,7 +4,7 @@
 			class="mx-auto"
 			variant="outlined"
 			width="400"
-			:max-width="useDisplay().mobile ? '90%' : '50%'"
+			:max-width="mobile ? '90%' : '50%'"
 		>
 			<v-img :src="imgUrl" height="250px" cover />
 			<v-card-title align="center">LOGIN 개발중</v-card-title>
@@ -33,6 +33,7 @@ import { useDisplay } from 'vuetify';
 import { ref } from 'vue';
 // import { login } from '../../api/user';
 
+const { mobile } = useDisplay(); // 모바일 확인
 const username = ref('');
 const password = ref('');
 
