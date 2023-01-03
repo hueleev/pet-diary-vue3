@@ -18,17 +18,24 @@
 			<template v-if="!rail">
 				<v-list-item>
 					<template v-slot:title>
-						<v-btn variant="text" size="large" @click="goPage('login')">
-							login
-						</v-btn>
-						<v-btn variant="text" size="large" @click="goPage('join')">
-							join
-						</v-btn>
-						<!-- MOZZI -->
+						<template v-if="token == null">
+							<v-btn variant="text" size="large" @click="goPage('login')">
+								login
+							</v-btn>
+							<v-btn variant="text" size="large" @click="goPage('join')">
+								join
+							</v-btn>
+						</template>
+						<template v-else>
+							<h3>{{ userInfo.userName }}</h3>
+							<h4>
+								{{ userInfo.email }}
+							</h4>
+						</template>
 					</template>
 					<template v-slot:append>
 						<v-btn
-							variant="text"
+							variant="tonal"
 							size="small"
 							icon="mdi-chevron-left"
 							@click.stop="rail = !rail"
@@ -62,23 +69,34 @@
 				:active="$route.name == 'painting'"
 				to="/painting"
 			/>
-			<!-- <v-list-item
-						prepend-icon="mdi-star"
-						title="Starred"
-						value="starred"
-						aria-disabled="true"
-					></v-list-item> -->
+			<v-list-item
+				v-if="token"
+				prepend-icon="mdi-star"
+				title="Logout"
+				value="logout"
+				:active="false"
+				@click="logout"
+			></v-list-item>
 		</v-list>
 	</v-navigation-drawer>
 	<slot />
 </template>
 
 <script setup>
+import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
+import { useAlert } from '@/composables/alert';
+import { useUserStore } from '../stores/user';
+import { useRouter } from 'vue-router';
 import imgUrl from '../assets/img/avatar.png';
 // import imgUrl2 from '../assets/img/avatar2.png';
 // import imgUrl3 from '../assets/img/avatar3.jpg';
-import { useRouter } from 'vue-router';
+
+const { vConfirm } = useAlert();
+const store = useUserStore();
+const { SET_LOGOUT } = store;
+const { token, userInfo } = storeToRefs(store);
+
 const drawer = ref(true);
 const rail = ref(true);
 
@@ -87,5 +105,17 @@ const goPage = name => {
 	router.push({
 		name,
 	});
+};
+
+const logout = () => {
+	vConfirm(
+		'로그아웃할거개?',
+		() => {
+			SET_LOGOUT();
+		},
+		() => {
+			console.log('no');
+		},
+	);
 };
 </script>

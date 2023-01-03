@@ -1,5 +1,10 @@
 <template>
-	<v-card class="mx-auto" variant="outlined" title="모찌에게">
+	<v-card
+		class="mx-auto"
+		variant="outlined"
+		title="모찌에게"
+		:max-width="props.type == 'insert' && !mobile ? '50%' : '100%'"
+	>
 		<v-container>
 			<v-text-field
 				:label="checkInsert('제목', '')"
@@ -42,6 +47,10 @@
 </template>
 
 <script setup>
+import { useDisplay } from 'vuetify';
+
+const { mobile } = useDisplay(); // 모바일 확인
+
 // event emit
 defineEmits([
 	'update:title',
@@ -67,6 +76,8 @@ const checkInsert = (v1, v2) => {
 		return v2;
 	}
 };
+
+console.log(props);
 </script>
 
 <style lang="scss" scoped></style>
