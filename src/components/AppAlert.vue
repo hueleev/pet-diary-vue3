@@ -44,7 +44,7 @@ const { alerts, vClose } = useAlert(); // alert
 
 const dialog = ref(true);
 
-const typeStyle = type => (type === 'error' ? 'red' : 'black');
+const typeStyle = type => (type === 'error' ? 'red' : 'green');
 </script>
 
 <style scoped>

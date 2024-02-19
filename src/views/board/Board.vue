@@ -18,8 +18,8 @@
 </template>
 
 <script setup>
-import BoardList from '@/components/board/BoardList.vue';
-import BoardWrite from '@/components/board/BoardWrite.vue';
+import BoardList from '@/views/board/BoardList.vue';
+import BoardWrite from '@/views/board/BoardWrite.vue';
 import { ref } from 'vue';
 
 const toggleType = ref('list');

@@ -12,15 +12,15 @@
 				:title="board.boardTitle"
 				:content="board.boardCnt"
 				:boardWriter="board.boardWriter"
-				:createDt="board.create_dt"
-				:updateDt="board.update_dt"
+				:createDt="board.createDt"
+				:updateDt="board.updateDt"
 			/>
 		</template>
 	</v-row>
 </template>
 
 <script setup>
-import BoardCard from '@/components/board/BoardCard.vue';
+import BoardCard from '@/views/board/BoardCard.vue';
 import { useAxios } from '@/hooks/useAxios';
 
 // 게시글 목록 조회 API

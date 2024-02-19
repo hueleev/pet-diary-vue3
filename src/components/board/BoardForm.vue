@@ -76,8 +76,6 @@ const checkInsert = (v1, v2) => {
 		return v2;
 	}
 };
-
-console.log(props);
 </script>
 
 <style lang="scss" scoped></style>

@@ -39,6 +39,7 @@
 	<div>
 		<div
 			class="d-flex justify-center"
+			style="position: sticky"
 			:style="mobile ? 'padding-top: 40%' : 'padding-top: 20%'"
 		>
 			<TailDog v-show="toggleType == 'tail'" style="padding-top: 50px" />

@@ -23,7 +23,7 @@ export const OAUTH_CONFIG = {
 export const API_CONFIG = {
 	baseUrl: `${import.meta.env.VITE_APP_URL_OPENAPI}`,
 	client_id: `${import.meta.env.VITE_APP_CLIENT_ID}`,
-	client_secret: `${import.meta.env.VUE_APP_CLIENT_SECRET}`,
+	client_secret: `${import.meta.env.VITE_APP_CLIENT_SECRET}`,
 };
 
 /**

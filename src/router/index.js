@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import BoardView from '../views/BoardView.vue';
-import DogsView from '../views/DogsView.vue';
-import PaintingView from '../views/PaintingView.vue';
+import Board from '../views/board/Board.vue';
+import Diary from '../views/Diary.vue';
+import Dogs from '../views/Dogs.vue';
+import Painting from '../views/Painting.vue';
 
-import LoginView from '../views/user/LoginView.vue';
-import JoinView from '../views/user/JoinView.vue';
+import Login from '../views/user/Login.vue';
+import Join from '../views/user/Join.vue';
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,17 +17,22 @@ const router = createRouter({
 		{
 			path: '/board',
 			name: 'board',
-			component: BoardView,
+			component: Board,
+		},
+		{
+			path: '/diary',
+			name: 'diary',
+			component: Diary,
 		},
 		{
 			path: '/dogs',
 			name: 'dogs',
-			component: DogsView,
+			component: Dogs,
 		},
 		{
 			path: '/painting',
 			name: 'painting',
-			component: PaintingView,
+			component: Painting,
 		},
 		{
 			path: '/user',
@@ -35,12 +41,12 @@ const router = createRouter({
 				{
 					path: 'login',
 					name: 'login',
-					component: LoginView,
+					component: Login,
 				},
 				{
 					path: 'join',
 					name: 'join',
-					component: JoinView,
+					component: Join,
 				},
 			],
 		},

@@ -15,8 +15,8 @@ export const useAlertStore = defineStore('alert', {
 				}
 			}, 1500);
 		},
-		vSuccess(message) {
-			this.vAlert(message, 'success');
+		vSuccess(message, callback) {
+			this.vAlert(message, 'success', callback);
 		},
 		vConfirm(message, resolve, reject) {
 			this.alerts.push({ message, type: 'confirm', resolve, reject });

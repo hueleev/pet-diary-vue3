@@ -56,6 +56,13 @@
 				to="/board"
 			/>
 			<v-list-item
+				prepend-icon="mdi-palette"
+				title="Diary"
+				value="diary"
+				:active="$route.name == 'diary'"
+				to="/diary"
+			/>
+			<v-list-item
 				prepend-icon="mdi-dog"
 				title="Dogs"
 				value="dogs"
@@ -88,6 +95,8 @@ import { ref } from 'vue';
 import { useAlert } from '@/composables/alert';
 import { useUserStore } from '../stores/user';
 import { useRouter } from 'vue-router';
+import { VNavigationDrawer } from 'vuetify/lib/components/index.mjs';
+
 import imgUrl from '../assets/img/avatar.png';
 // import imgUrl2 from '../assets/img/avatar2.png';
 // import imgUrl3 from '../assets/img/avatar3.jpg';
@@ -101,6 +110,7 @@ const drawer = ref(true);
 const rail = ref(true);
 
 const router = useRouter();
+
 const goPage = name => {
 	router.push({
 		name,
