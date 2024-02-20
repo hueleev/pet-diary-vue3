@@ -56,7 +56,7 @@
 				to="/board"
 			/>
 			<v-list-item
-				prepend-icon="mdi-palette"
+				prepend-icon="mdi-calendar-blank"
 				title="Diary"
 				value="diary"
 				:active="$route.name == 'diary'"
