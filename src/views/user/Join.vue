@@ -1,10 +1,10 @@
 <template>
 	<div class="d-flex h-screen align-center py-5">
 		<v-card
-			class="mx-auto my-auto card"
+			class="mx-auto my-auto"
 			variant="outlined"
-			width="400"
-			:max-width="mobile ? '90%' : '50%'"
+			width="400px"
+			:max-width="mobile ? '95%' : '50%'"
 			max-height="90%"
 			style="overflow: hidden auto"
 		>
@@ -87,11 +87,34 @@
 						:items="['M', 'F']"
 					></v-select>
 					<!-- 생일 -->
-					<v-date-picker
-						v-model="userInfo.birthday"
-						title="🤍Birthday🤍"
-						:max="new Date()"
-					/>
+					<v-menu v-model="modal" :close-on-content-click="false">
+						<template v-slot:activator="{ props }">
+							<v-text-field
+								label="🤍Birthday🤍"
+								:model-value="dayjs(userInfo.birthday).format('YYYY-MM-DD')"
+								readonly
+								v-bind="props"
+								variant="solo"
+								hide-details
+							></v-text-field>
+						</template>
+						<v-date-picker
+							v-model="userInfo.birthday"
+							hide-actions
+							title="🤍Birthday🤍"
+							color="black"
+							:max="new Date()"
+						>
+							<template v-slot:header></template>
+						</v-date-picker>
+					</v-menu>
+					<!-- <v-btn @click="showDatePicker = !showDatePicker">Date</v-btn>-->
+
+					<!-- <v-date-picker
+								v-model="userInfo.birthday"
+								title="🤍Birthday🤍"
+								:max="new Date()"
+							/> -->
 				</v-container>
 				<v-divider />
 				<v-card-actions>
@@ -109,7 +132,9 @@
 				</v-card-actions>
 			</v-form>
 		</v-card>
+		<!-- <v-btn @click="showDatePicker = !showDatePicker">Date</v-btn>-->
 	</div>
+
 	<Stplat
 		:show="showModal"
 		:stplatInfo="stplatInfo"
@@ -120,7 +145,6 @@
 <script setup>
 import MPhone from './MPhone.vue';
 import Stplat from './Stplat.vue';
-
 import imgUrl from '@/assets/img/join.jpg';
 import sha256 from 'sha256';
 
@@ -130,11 +154,13 @@ import { useAlert } from '@/composables/alert';
 import { useRouter } from 'vue-router';
 
 import { checkExistUserId, getStplat, registerUser } from '@/api/openApi';
+import dayjs from 'dayjs';
 
 const { mobile } = useDisplay(); // 모바일 확인
 const { vAlert, vSuccess } = useAlert();
 const router = useRouter();
 
+const modal = ref(false);
 const userInfo = ref({
 	userId: '',
 	password: '',

@@ -11,7 +11,7 @@
 						:disabled="mobilePhone.valid"
 					/>
 				</v-col>
-				<v-col cols="2">
+				<v-col cols="3">
 					<v-btn
 						:disabled="mobilePhone.valid"
 						@click="validMobilePhone(mobilePhone.phoneNumber)"
@@ -30,7 +30,7 @@
 						:rules="[rules.required]"
 					/>
 				</v-col>
-				<v-col cols="2">
+				<v-col cols="3">
 					<v-btn
 						:disabled="mobilePhone.valid || !mobilePhone.input"
 						@click="checkAuthCode"

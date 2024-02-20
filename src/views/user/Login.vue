@@ -4,7 +4,7 @@
 			class="mx-auto"
 			variant="outlined"
 			width="400"
-			:max-width="mobile ? '90%' : '50%'"
+			:max-width="mobile ? '95%' : '50%'"
 		>
 			<v-form @submit.prevent="loginProcess">
 				<v-img :src="imgUrl" height="250px" cover />
