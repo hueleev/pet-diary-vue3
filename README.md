@@ -1,6 +1,7 @@
 # pet-diary-vue3
 
 This template should help get you started developing with Vue 3 in Vite.
+http://140.238.22.22:8080/pet-diary-vue3
 
 ## Recommended IDE Setup
 
